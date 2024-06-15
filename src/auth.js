@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
+import TwitterProvider from "next-auth/providers/twitter";
 
 export const {
   handlers: { GET, POST },
@@ -23,6 +24,17 @@ export const {
     GithubProvider({
       clientId: process.env.NEXT_PUBLIC_GITHUB_ID,
       clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
+    }),
+    TwitterProvider({
+      clientId: process.env.NEXT_PUBLIC_TWITTER_ID,
+      clientSecret: process.env.NEXT_PUBLIC_TWITTER_SECRET,
       authorization: {
         params: {
           prompt: "consent",

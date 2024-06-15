@@ -17,6 +17,14 @@ const LoginForm = () => {
       <button className="bg-black" type="submit" name="action" value="github">
         Login With GitHub
       </button>
+      <button
+        className="bg-[#1DA1F2]"
+        type="submit"
+        name="action"
+        value="twitter"
+      >
+        Login With Twitter
+      </button>
     </form>
   );
 };
