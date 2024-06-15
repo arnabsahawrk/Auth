@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
 import DiscordProvider from "next-auth/providers/discord";
+import FacebookProvider from "next-auth/providers/facebook";
 
 export const {
   handlers: { GET, POST },
@@ -47,6 +48,17 @@ export const {
     DiscordProvider({
       clientId: process.env.NEXT_PUBLIC_DISCORD_ID,
       clientSecret: process.env.NEXT_PUBLIC_DISCORD_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
+    }),
+    FacebookProvider({
+      clientId: process.env.NEXT_PUBLIC_FACEBOOK_ID,
+      clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_SECRET,
       authorization: {
         params: {
           prompt: "consent",

@@ -33,6 +33,14 @@ const LoginForm = () => {
       >
         Login With Discord
       </button>
+      <button
+        className="bg-[#0866FF]"
+        type="submit"
+        name="action"
+        value="facebook"
+      >
+        Login With Facebook
+      </button>
     </form>
   );
 };
