@@ -1,9 +1,9 @@
-import { donSocialLogIn } from "@/app/actions";
+import { doSocialLogIn } from "@/app/actions";
 
 const LoginForm = () => {
   return (
     <form
-      action={donSocialLogIn}
+      action={doSocialLogIn}
       className="text-lg text-white *:rounded *:px-2 *:py-1 grid grid-cols-2 gap-4"
     >
       <button
