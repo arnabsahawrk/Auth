@@ -25,6 +25,14 @@ const LoginForm = () => {
       >
         Login With Twitter
       </button>
+      <button
+        className="bg-[#5865F2]"
+        type="submit"
+        name="action"
+        value="discord"
+      >
+        Login With Discord
+      </button>
     </form>
   );
 };
